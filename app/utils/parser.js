@@ -205,6 +205,5 @@ export function jsonConvert(prop) {
 }
 export default function parser(content = {}) {
   let parsed = recursiveMap(content);
-  console.log(parsed, stringify([parsed]));
   return stringify([parsed]);
 }

@@ -17,7 +17,8 @@
     "URL": "readonly",
     "console": "readonly",
     "require": "readonly",
-    "Promise": "writable"
+    "Promise": "writable",
+    "__dirname": "readonly"
   },
   "extends": ["eslint:recommended"],
   "rules": {

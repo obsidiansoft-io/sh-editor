@@ -6,6 +6,7 @@ import fs from 'fs';
 import { remote } from 'electron';
 
 import parser from '../../Utils/parser';
+import createViewFrame from '../../Lib/renderView';
 
 import 'ace-builds/src-noconflict/mode-json';
 import 'ace-builds/src-noconflict/mode-html';
@@ -15,22 +16,9 @@ const { BrowserWindow } = remote;
 function Home(props) {
   const [page, setPage] = useState('');
   const [mode, setMode] = useState('json');
-  let view = null;
+
   function onChange(newValue) {
     setPage(newValue);
-  }
-  async function createBrowserWindow() {
-    if (mode === 'json') {
-      const parsed = parser(JSON.parse(page).content);
-      const html = `<html><head><title>Sharabiz Page View</title><meta http-equiv="Content-Security-Policy" content="script-src 'self';"></head><body>${parsed.toString()}</body></html>`;
-      fs.writeFile(path.join(__dirname, '../cache/view.html'), html, () => {
-        view = new BrowserWindow({
-          height: 600,
-          width: 800
-        });
-        view.loadURL(path.join(__dirname, '../cache/view.html'));
-      });
-    }
   }
   return (
     <div className="home" style={{ width: '100%', height: '100vh' }}>
@@ -47,7 +35,7 @@ function Home(props) {
           </Select>
         </Col>
         <Col>
-          <Button onClick={createBrowserWindow} type="primary">
+          <Button onClick={() => createViewFrame(mode, page)} type="primary">
             Run
           </Button>
         </Col>
