@@ -56,8 +56,8 @@
     ]
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.develar.ElectronReact",
+    "productName": "Sheditor",
+    "appId": "org.develar.Sheditor",
     "files": [
       "dist/",
       "node_modules/",
