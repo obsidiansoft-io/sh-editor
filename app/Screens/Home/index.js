@@ -1,32 +1,40 @@
 import React, { useState } from 'react';
 import { Button, Select, Row, Col } from 'antd';
 import AceEditor from 'react-ace';
+import path from 'path';
+import fs from 'fs';
+import { remote } from 'electron';
+
 import parser from '../../Utils/parser';
 
 import 'ace-builds/src-noconflict/mode-json';
 import 'ace-builds/src-noconflict/mode-html';
 import 'ace-builds/src-noconflict/theme-monokai';
+const { BrowserWindow } = remote;
 
 function Home(props) {
   const [page, setPage] = useState('');
   const [mode, setMode] = useState('json');
+  let view = null;
   function onChange(newValue) {
     setPage(newValue);
   }
   async function createBrowserWindow() {
-    const parsed = parser(JSON.parse(page).content);
-    const html = `<head><title>Sharabiz Page View</title><meta http-equiv="Content-Security-Policy" content="script-src 'self';"></head><body><div>${parsed.toString()}</div></body>`;
-    const { remote } = require('electron');
-    const { BrowserWindow } = remote;
-    const win = new BrowserWindow({
-      height: 600,
-      width: 800
-    });
-    win.loadURL('data:text/html;charset=utf-8,' + encodeURI(html));
+    if (mode === 'json') {
+      const parsed = parser(JSON.parse(page).content);
+      const html = `<html><head><title>Sharabiz Page View</title><meta http-equiv="Content-Security-Policy" content="script-src 'self';"></head><body>${parsed.toString()}</body></html>`;
+      fs.writeFile(path.join(__dirname, '../cache/view.html'), html, () => {
+        view = new BrowserWindow({
+          height: 600,
+          width: 800
+        });
+        view.loadURL(path.join(__dirname, '../cache/view.html'));
+      });
+    }
   }
   return (
     <div className="home" style={{ width: '100%', height: '100vh' }}>
-      <Row type="flex" justify="space-between" style={{ marginBottom: 20 }}>
+      <Row type="flex" justify="space-between" style={{ margin: 20 }}>
         <Col>
           <span>Mode:</span>
           <Select
@@ -53,8 +61,6 @@ function Home(props) {
         editorProps={{ $blockScrolling: true }}
         commands={['children']}
         width="100%"
-        enableLiveAutocompletion
-        enableSnippets
       />
     </div>
   );

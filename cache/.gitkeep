@@ -1,0 +1,603 @@
+{
+    "content": {
+                "id": "main",
+                "tagName": "div",
+                "style": {
+                    "backgroundColor": "#fdfdfd",
+                    "overflowX": "hidden"
+                },
+                "children": [
+                    {
+                        "element_type": "boxMain",
+                        "tagName": "div",
+                        "classList": [
+                            "container-fluid "
+                        ],
+                        "style": {
+                            "backgroundColor": "#fdfdfd"
+                        },
+                        "children": [
+                            {
+                                "element_type": "boxMain",
+                                "tagName": "div",
+                                "classList": [
+                                    "row "
+                                ],
+                                "children": [
+                                    {
+                                        "element_type": "boxMain",
+                                        "tagName": "div",
+                                        "classList": [
+                                            "col-10  col-md-7 offset-md-1 py-4"
+                                        ],
+                                        "style": {},
+                                        "children": [
+                                            {
+                                                "element_type": "title",
+                                                "tagName": "h2",
+                                                "innerText": "New protype",
+                                                "classList": [
+                                                    "mb-1"
+                                                ],
+                                                "style": {
+                                                    "fontSize": "2em",
+                                                    "fontWeight": "600",
+                                                    "textTransform": "capitalize",
+                                                    "padding": "0",
+                                                    "margin": "0",
+                                                    "color": "#333545"
+                                                }
+                                            },
+                                            {
+                                                "element_type": "paragraph",
+                                                "tagName": "p",
+                                                "innerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                                                "style": {
+                                                    "color": "#7b7b7b",
+                                                    "padding": "0",
+                                                    "margin": "0"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "element_type": "boxMain",
+                                        "tagName": "div",
+                                        "classList": [
+                                            "col-2 col-md-1 offset-md-3"
+                                        ],
+                                        "style": {
+                                            "backgroundColor": "#3c65d0"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "element_type": "boxMain",
+                        "tagName": "div",
+                        "classList": [
+                            "container-fluid m-0  p-0"
+                        ],
+                        "style": {
+                            "height": "377px",
+                            "width": "100vw"
+                        },
+                        "children": [
+                            {
+                                "element_type": "ImagesBackground",
+                                "tagName": "parallax-image",
+                                "src": "https://sharabiz.sfo2.digitaloceanspaces.com/cards/5e28a08d55ec4600111f1d69.jpg",
+                                "classList": [
+                                    "m-0 "
+                                ],
+                                "style": {
+                                    "backgroundAttachment": "fixed",
+                                    "backgroundPosition": "center center",
+                                    "backgroundRepeat": "no-repeat",
+                                    "element_base": true,
+                                    "backgroundSize": "cover",
+                                    "backgroundImage": "url('https://sharabiz.sfo2.digitaloceanspaces.com/cards/5e28a08d55ec4600111f1d69.jpg')"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "element_type": "boxMain",
+                        "tagName": "div",
+                        "classList": [
+                            "container-fluid "
+                        ],
+                        "style": {
+                            "backgroundColor": "#fdfdfd"
+                        },
+                        "children": [
+                            {
+                                "element_type": "boxMain",
+                                "tagName": "div",
+                                "classList": [
+                                    "row justify-content-center py-5"
+                                ],
+                                "children": [
+                                    {
+                                        "element_type": "boxMain",
+                                        "tagName": "div",
+                                        "classList": [
+                                            "col-12 offset-0 col-md-4 offset-md-0 align-self-center mb-4"
+                                        ],
+                                        "style": {},
+                                        "children": [
+                                            {
+                                                "element_type": "title",
+                                                "tagName": "h2",
+                                                "innerText": "New protype",
+                                                "classList": [
+                                                    "title"
+                                                ],
+                                                "style": {
+                                                    "fontSize": "2.2em",
+                                                    "color": "#3B66D0",
+                                                    "letterSpacing": "0.01em",
+                                                    "marginBottom": "0",
+                                                    "marginTop": "0",
+                                                    "paddingBottom": "0.13em"
+                                                }
+                                            },
+                                            {
+                                                "element_type": "paragraph",
+                                                "tagName": "p",
+                                                "innerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                                                "style": {
+                                                    "fontWeight": "400",
+                                                    "color": "#252525",
+                                                    "fontSize": "1em",
+                                                    "marginBottom": "0",
+                                                    "marginTop": "0"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "element_type": "boxMain",
+                                        "tagName": "div",
+                                        "classList": [
+                                            "col-12 col-md-4 offset-md-1 align-self-center"
+                                        ],
+                                        "children": [
+                                            {
+                                                "element_type": "youtube-video",
+                                                "classList": [
+                                                    "youtube-video"
+                                                ],
+                                                "tagName": "iframe",
+                                                "src": "https://www.youtube.com/embed/tgbNymZ7vqY",
+                                                "frameborder": "0",
+                                                "allowfullscreen": "true",
+                                                "style": {
+                                                    "height": "18em",
+                                                    "width": "100%"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "element_type": "boxMain",
+                        "tagName": "div",
+                        "classList": [
+                            "container-fluid "
+                        ],
+                        "style": {
+                            "backgroundColor": "#000"
+                        },
+                        "children": [
+                            {
+                                "element_type": "boxMain",
+                                "tagName": "div",
+                                "classList": [
+                                    "row justify-content-center py-5"
+                                ],
+                                "children": [
+                                    {
+                                        "element_type": "profile",
+                                        "tagName": "div",
+                                        "classList": [
+                                            "col-12 text-center align-self-center"
+                                        ],
+                                        "style": {},
+                                        "children": [
+                                            {
+                                                "classList": [
+                                                    "profile-image"
+                                                ],
+                                                "tagName": "span",
+                                                "style": {
+                                                    "backgroundColor": "#DDD",
+                                                    "backgroundPosition": "center center",
+                                                    "backgroundRepeat": "no-repeat",
+                                                    "backgroundSize": "cover",
+                                                    "borderRadius": "5%",
+                                                    "display": "inline-block",
+                                                    "height": "7em",
+                                                    "width": "7em",
+                                                    "backgroundImage": "url(https://bucket.obsidiansoft.io/cards/5db7cfd1cc31c100122ae151.jpg)"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "element_type": "profile",
+                                        "tagName": "div",
+                                        "classList": [
+                                            "col-12 col-md-3 text-center my-3"
+                                        ],
+                                        "style": {},
+                                        "children": [
+                                            {
+                                                "classList": [
+                                                    "profile-name"
+                                                ],
+                                                "tagName": "p",
+                                                "innerText": "Carlos Julio",
+                                                "style": {
+                                                    "fontSize": "2em",
+                                                    "color": "#ffffff"
+                                                }
+                                            },
+                                            {
+                                                "element_type": "paragraph",
+                                                "tagName": "p",
+                                                "innerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..",
+                                                "style": {
+                                                    "fontWeight": "400",
+                                                    "color": "#ffffff",
+                                                    "marginBottom": "0",
+                                                    "marginTop": "0"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "element_type": "boxMain",
+                        "tagName": "div",
+                        "classList": [
+                            "container-fluid "
+                        ],
+                        "style": {
+                            "backgroundColor": "#151c2d"
+                        },
+                        "children": [
+                            {
+                                "element_type": "boxMain",
+                                "tagName": "div",
+                                "classList": [
+                                    "row justify-content-center py-5"
+                                ],
+                                "children": [
+                                    {
+                                        "element_type": "boxMain",
+                                        "tagName": "div",
+                                        "classList": [
+                                            " col-12 col-md-3 offset-md-0   "
+                                        ],
+                                        "children": [
+                                            {
+                                                "tagName": "h2",
+                                                "innerText": "Contact US",
+                                                "style": {
+                                                    "fontSize": "2em",
+                                                    "color": "#ffffff",
+                                                    "fontWeight": "600",
+                                                    "paddingTop": "0",
+                                                    "paddingBottom": "0",
+                                                    "marginTop": 0,
+                                                    "marginBottom": "0"
+                                                }
+                                            },
+                                            {
+                                                "tagName": "p",
+                                                "innerText": "By entering your contact information, you agree to receive our marketing offers in accordance with our Privacy Policy.",
+                                                "style": {
+                                                    "fontSize": "16px",
+                                                    "padding": "0",
+                                                    "color": "#ffffff",
+                                                    "fontWeight": "400",
+                                                    "paddingTop": "0",
+                                                    "margin": "0"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "element_type": "boxMain",
+                                        "tagName": "div",
+                                        "classList": [
+                                            "col-12 col-md-3 offset-md-2 mt-4"
+                                        ],
+                                        "children": [
+                                            {
+                                                "element_type": "input",
+                                                "tagName": "input",
+                                                "name": "name",
+                                                "slot": "name",
+                                                "placeholder": "name",
+                                                "classList": [
+                                                    "form-control "
+                                                ],
+                                                "style": {
+                                                    "borderRadius": "8px",
+                                                    "border": "none",
+                                                    "background": "#f5f3f3",
+                                                    "padding": "1em",
+                                                    "marginBottom": "1em",
+                                                    "color": "#000",
+                                                    "outline": "none",
+                                                    "width": "100%",
+                                                    "fontSize": "1em"
+                                                }
+                                            },
+                                            {
+                                                "element_type": "input",
+                                                "tagName": "input",
+                                                "name": "email",
+                                                "slot": "email",
+                                                "placeholder": "email",
+                                                "classList": [
+                                                    "form-control"
+                                                ],
+                                                "style": {
+                                                    "borderRadius": "8px",
+                                                    "border": "none",
+                                                    "background": "#f5f3f3",
+                                                    "padding": "1em",
+                                                    "color": "#000",
+                                                    "outline": "none",
+                                                    "width": "100%",
+                                                    "marginBottom": "1em",
+                                                    "fontSize": "1em"
+                                                }
+                                            },
+                                            {
+                                                "element_type": "input",
+                                                "tagName": "input",
+                                                "name": "phone",
+                                                "slot": "phone",
+                                                "placeholder": "phone",
+                                                "classList": [
+                                                    "form-control"
+                                                ],
+                                                "style": {
+                                                    "borderRadius": "8px",
+                                                    "border": "none",
+                                                    "background": "#f5f3f3",
+                                                    "padding": "1em",
+                                                    "color": "#000",
+                                                    "marginBottom": "1em",
+                                                    "width": "100%",
+                                                    "outline": "none",
+                                                    "fontSize": "1em"
+                                                }
+                                            },
+                                            {
+                                                "element_type": "button",
+                                                "tagName": "button",
+                                                "slot": "action-dispatch",
+                                                "innerText": "Tell me more!",
+                                                "classList": [
+                                                    "btn-primary py-2 px-3"
+                                                ],
+                                                "style": {
+                                                    "backgroundColor": "#3c65d0",
+                                                    "color": "#fff",
+                                                    "fontWeight": "600",
+                                                    "textTransform": "initial",
+                                                    "borderRadius": "5px",
+                                                    "border": "none",
+                                                    "fontSize": "1em",
+                                                    "letterSpacing": "1.5px"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "element_type": "boxMain",
+                        "tagName": "div",
+                        "classList": [
+                            "container-fluid m-0  p-0"
+                        ],
+                        "style": {
+                            "height": "377px",
+                            "width": "100vw"
+                        },
+                        "children": [
+                            {
+                                "element_type": "ImagesBackground",
+                                "tagName": "parallax-image",
+                                "src": "https://sharabiz.sfo2.digitaloceanspaces.com/cards/5e28a0a155ec4600111f1d6a.jpg",
+                                "classList": [
+                                    "m-0 "
+                                ],
+                                "style": {
+                                    "backgroundAttachment": "fixed",
+                                    "backgroundPosition": "center center",
+                                    "backgroundRepeat": "no-repeat",
+                                    "element_base": true,
+                                    "backgroundSize": "cover",
+                                    "backgroundImage": "url('https://sharabiz.sfo2.digitaloceanspaces.com/cards/5e28a0a155ec4600111f1d6a.jpg')"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "element_type": "boxMain",
+                        "tagName": "div",
+                        "classList": [
+                            " container-fluid"
+                        ],
+                        "style": {
+                            "backgroundColor": "#fdfdfd",
+                            "boxShadow": "0px 0px 5px 1px rgba(0, 0, 0, 0.21)"
+                        },
+                        "children": [
+                            {
+                                "element_type": "boxMain",
+                                "tagName": "div",
+                                "classList": [
+                                    "row"
+                                ],
+                                "style": {},
+                                "children": [
+                                    {
+                                        "element_type": "boxMain",
+                                        "tagName": "div",
+                                        "classList": [
+                                            "col-sm-12 col-md-4 mb-3 mt-3"
+                                        ],
+                                        "style": {
+                                            "display": "flex",
+                                            "flexDirection": "column",
+                                            "paddingRight": "0",
+                                            "paddingLeft": "0"
+                                        },
+                                        "children": [
+                                            {
+                                                "element_type": "paragraph",
+                                                "tagName": "p",
+                                                "innerText": "Escribe un email",
+                                                "style": {
+                                                    "textTransform": "capitalize",
+                                                    "color": "#5d5d5d",
+                                                    "textAlign": "center",
+                                                    "fontSize": "1.2em",
+                                                    "margin": "0"
+                                                }
+                                            },
+                                            {
+                                                "element_type": "link",
+                                                "classList": [
+                                                    "link"
+                                                ],
+                                                "href": "https://www.google.com",
+                                                "innerText": "brendaBiz@gmail.com",
+                                                "tagName": "a",
+                                                "target": "_blank",
+                                                "title": "brendaBiz@gmail.com",
+                                                "style": {
+                                                    "color": "#3c65d0",
+                                                    "fontSize": "14px",
+                                                    "textAlign": "center",
+                                                    "fontWeight": "bold",
+                                                    "textDecoration": "none"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "element_type": "boxMain",
+                                        "tagName": "div",
+                                        "classList": [
+                                            "col-sm-12 col-md-4 mb-3 mt-3"
+                                        ],
+                                        "style": {
+                                            "display": "flex",
+                                            "flexDirection": "column",
+                                            "paddingRight": "0",
+                                            "paddingLeft": "0"
+                                        },
+                                        "children": [
+                                            {
+                                                "element_type": "paragraph",
+                                                "tagName": "p",
+                                                "innerText": "Sígueme en twitter",
+                                                "style": {
+                                                    "textTransform": "capitalize",
+                                                    "color": "#5d5d5d",
+                                                    "textAlign": "center",
+                                                    "fontSize": "1.2em",
+                                                    "margin": "0"
+                                                }
+                                            },
+                                            {
+                                                "element_type": "link",
+                                                "classList": [
+                                                    "link"
+                                                ],
+                                                "href": "https://www.google.com",
+                                                "innerText": "@brendaBiz",
+                                                "tagName": "a",
+                                                "target": "_blank",
+                                                "title": "@brendaBiz",
+                                                "style": {
+                                                    "color": "#3c65d0",
+                                                    "fontSize": "14px",
+                                                    "textAlign": "center",
+                                                    "fontWeight": "bold",
+                                                    "textDecoration": "none"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "element_type": "boxMain",
+                                        "tagName": "div",
+                                        "classList": [
+                                            "col-sm-12 col-md-4 mb-3 mt-3"
+                                        ],
+                                        "style": {
+                                            "display": "flex",
+                                            "flexDirection": "column",
+                                            "paddingRight": "0",
+                                            "paddingLeft": "0"
+                                        },
+                                        "children": [
+                                            {
+                                                "element_type": "paragraph",
+                                                "tagName": "p",
+                                                "innerText": "ventas mayorista",
+                                                "style": {
+                                                    "textTransform": "capitalize",
+                                                    "color": "#5d5d5d",
+                                                    "textAlign": "center",
+                                                    "fontSize": "1.2em",
+                                                    "margin": "0"
+                                                }
+                                            },
+                                            {
+                                                "element_type": "link",
+                                                "classList": [
+                                                    "link"
+                                                ],
+                                                "href": "https://www.google.com",
+                                                "innerText": "(442) 442 5524 ",
+                                                "tagName": "a",
+                                                "target": "_blank",
+                                                "title": "(442) 442 5524 ",
+                                                "style": {
+                                                    "color": "#3c65d0",
+                                                    "fontSize": "14px",
+                                                    "textAlign": "center",
+                                                    "fontWeight": "bold",
+                                                    "textDecoration": "none"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+}

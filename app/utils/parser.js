@@ -122,14 +122,89 @@ export function recursiveMap(prop) {
               obj.tagName = `carousel-view`;
             }
         }
-      } catch (e) {}
+      } catch (e) {
+        console.log(e);
+      }
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
   return obj;
 }
-
+export function jsonConvert(prop) {
+  let obj = {
+      tagName: '',
+      classList: [],
+      style: {},
+      children: []
+    },
+    hasIcon = false,
+    isCarousel = false;
+  try {
+    Object.keys(prop).map(async (key, index) => {
+      try {
+        let value = '';
+        switch (key) {
+          case 'tagName':
+            obj.tagName = prop[key];
+            break;
+          case 'children':
+            prop[key].map(e => obj.children.push(jsonConvert(e)));
+            break;
+          case 'attributes':
+            for (let attr of prop[key]) {
+              obj[attr.key] = attr.value;
+            }
+            break;
+          case 'type':
+            break;
+          case 'style':
+            //iteramos los estilos y los parseamos
+            Object.keys(prop[key]).map((key2, index) => {
+              if (key2 !== 'element_base') {
+                value += parseCSS(key2) + `: ${prop[key][key2]};`;
+              }
+            });
+            if (
+              typeof prop['element_type'] !== 'undefined' &&
+              prop['element_type'] === 'contact-me'
+            ) {
+              key = 'styles';
+            }
+            obj.attributes.push({
+              key: key,
+              value: value
+            });
+            break;
+          default:
+            if (
+              key !== 'allow_edit' &&
+              key !== 'element_type' &&
+              key !== 'element_base'
+            ) {
+              obj.attributes.push({
+                key: key,
+                value: `${prop[key]}`
+              });
+            } else if (key === 'element_type' && prop[key] === 'icon') {
+              obj.tagName = `fa-icon`;
+            } else if (key === 'element_type' && prop[key] === 'contact-me') {
+              obj.tagName = `form-contact`;
+            } else if (key === 'element_type' && prop[key] === 'carousel') {
+              obj.tagName = `carousel-view`;
+            }
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  return obj;
+}
 export default function parser(content = {}) {
   let parsed = recursiveMap(content);
-  console.log(parsed);
+  console.log(parsed, stringify([parsed]));
   return stringify([parsed]);
 }
