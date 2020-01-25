@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Input, Button, Form } from 'antd';
 import SharaImg from '../../Images/logoShara.png';
 
+//Redux
+import { connect } from 'react-redux';
+import { push } from 'connected-react-router';
+
 import { login } from '../../Services/Api';
 
 const LoginForm = props => {
@@ -15,6 +19,7 @@ const LoginForm = props => {
           setLoading(true);
           await login(values).then(() => {
             setLoading(false);
+            props.push('/home');
           });
         } catch (error) {
           setLoading(false);
@@ -51,4 +56,9 @@ const LoginForm = props => {
   );
 };
 
-export default Form.create({ name: 'edufarm_login' })(LoginForm);
+export default connect(
+  state => ({
+    login: state.auth
+  }),
+  { push }
+)(Form.create({ name: 'shar_login' })(LoginForm));
