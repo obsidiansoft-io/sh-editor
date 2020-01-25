@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { render } from 'react-dom';
 import { AppContainer as ReactHotAppContainer } from 'react-hot-loader';
-import Root from './containers/Root';
-import { configureStore, history } from './store/configureStore';
+import Root from './Components/Root';
+import { configureStore, history } from './Redux/store/configureStore';
 import './app.global.css';
 
 const store = configureStore();
