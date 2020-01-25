@@ -6,11 +6,13 @@ import fs from 'fs';
 import { remote } from 'electron';
 
 import parser from '../../Utils/parser';
-import createViewFrame from '../../Lib/renderView';
+import createViewFrame from '../../Utils/renderView';
 
+//Temas del editor
 import 'ace-builds/src-noconflict/mode-json';
 import 'ace-builds/src-noconflict/mode-html';
 import 'ace-builds/src-noconflict/theme-monokai';
+
 const { BrowserWindow } = remote;
 
 function Home(props) {

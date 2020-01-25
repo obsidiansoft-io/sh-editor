@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import { remote } from 'electron';
-import parser from '../Utils/parser';
+import parser from './parser';
 
 const { BrowserWindow, app } = remote;
 
