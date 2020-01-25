@@ -105,9 +105,9 @@ export default merge.smart(baseConfig, {
           }
         ]
       },
-      // SASS support - compile all .global.scss files and pipe it to style.css
+      // SASS support - compile all .global.less files and pipe it to style.css
       {
-        test: /\.global\.(scss|sass)$/,
+        test: /\.global\.(less)$/,
         use: [
           {
             loader: 'style-loader'
@@ -119,13 +119,16 @@ export default merge.smart(baseConfig, {
             }
           },
           {
-            loader: 'sass-loader'
+            loader: 'less-loader',
+             options: {
+              javascriptEnabled: true
+            }
           }
         ]
       },
-      // SASS support - compile all other .scss files and pipe it to style.css
+      // SASS support - compile all other .less files and pipe it to style.css
       {
-        test: /^((?!\.global).)*\.(scss|sass)$/,
+        test: /^((?!\.global).)*\.(less)$/,
         use: [
           {
             loader: 'style-loader'
@@ -141,7 +144,10 @@ export default merge.smart(baseConfig, {
             }
           },
           {
-            loader: 'sass-loader'
+            loader: 'less-loader',
+             options: {
+              javascriptEnabled: true
+            }
           }
         ]
       },
