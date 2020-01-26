@@ -1,4 +1,5 @@
 import { stringify } from 'himalaya';
+import validateTemplate from './validator';
 /**
  *Convierte las propiedades css de la base de datos.
  * @param {String} css propiedad de css para javascript
@@ -204,6 +205,8 @@ export function jsonConvert(prop) {
   return obj;
 }
 export default function parser(content = {}) {
+  console.log(content);
+  validateTemplate(content);
   let parsed = recursiveMap(content);
   return stringify([parsed]);
 }
