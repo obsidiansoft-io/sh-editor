@@ -5,5 +5,6 @@ export default {
     content: {
       $ref: '/element'
     }
-  }
+  },
+  required: ['content']
 };

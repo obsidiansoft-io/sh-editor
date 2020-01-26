@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
-import { Button, Select, Row, Col } from 'antd';
+import {
+  Button,
+  Select,
+  Row,
+  Col,
+  message,
+  Modal,
+  List,
+  Typography
+} from 'antd';
 import AceEditor from 'react-ace';
 import path from 'path';
 import fs from 'fs';
 import { remote } from 'electron';
 
 import parser from '../../Utils/parser';
+import { validateTemplate } from '../../Utils/validator';
 import createViewFrame from '../../Utils/renderView';
 
 //Temas del editor
@@ -18,9 +28,41 @@ const { BrowserWindow } = remote;
 function Home(props) {
   const [page, setPage] = useState('');
   const [mode, setMode] = useState('json');
+  const [modalView, setViewM] = useState(false);
 
   function onChange(newValue) {
     setPage(newValue);
+  }
+  function valueJSON() {
+    try {
+      let parsed = JSON.parse(page);
+      let { valid, errors } = validateTemplate(parsed);
+      if (valid) {
+        createViewFrame(mode, page);
+      } else {
+        Modal.error({
+          title: 'Template no valida',
+          content: (
+            <List
+              header={<div>Stack</div>}
+              dataSource={errors}
+              renderItem={(item, i) => (
+                <List.Item>
+                  <Typography.Text mark>[Error {i + 1}]</Typography.Text>
+                  {'  '}
+                  {item.stack}
+                </List.Item>
+              )}
+            />
+          )
+        });
+      }
+    } catch (error) {
+      Modal.error({
+        title: 'JSON NO VÁLIDO',
+        content: error.message
+      });
+    }
   }
   return (
     <div className="home" style={{ width: '100%', height: '100vh' }}>
@@ -37,7 +79,7 @@ function Home(props) {
           </Select>
         </Col>
         <Col>
-          <Button onClick={() => createViewFrame(mode, page)} type="primary">
+          <Button onClick={() => valueJSON()} type="primary">
             Run
           </Button>
         </Col>
