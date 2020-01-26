@@ -41,7 +41,7 @@ export async function login({ username, password }) {
     password
   }).then(
     response => {
-      return response;
+      return response.data;
     },
     rejected => {
       return rejected.response;

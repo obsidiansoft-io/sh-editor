@@ -6,7 +6,7 @@ const initState = {
 };
 
 export default function auth(state = initState, action) {
-  switch (action) {
+  switch (action.type) {
     case LOGIN:
       return {
         token: action.token,

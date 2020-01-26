@@ -6,6 +6,7 @@ import SharaImg from '../../Images/logoShara.png';
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
 
+import { logInAction } from '../../Redux/actions/auth';
 import { login } from '../../Services/Api';
 
 const LoginForm = props => {
@@ -17,7 +18,9 @@ const LoginForm = props => {
       if (!err) {
         try {
           setLoading(true);
-          await login(values).then(() => {
+          await login(values).then(res => {
+            console.log(res);
+            props.logInAction(res);
             setLoading(false);
             props.push('/home');
           });
@@ -60,5 +63,5 @@ export default connect(
   state => ({
     login: state.auth
   }),
-  { push }
+  { push, logInAction }
 )(Form.create({ name: 'shar_login' })(LoginForm));
