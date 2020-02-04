@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import { remote } from 'electron';
 import parser from './parser';
+import url from 'url';
 
 const { BrowserWindow, app } = remote;
 
@@ -49,7 +50,15 @@ export default async function createViewFrame(mode, page) {
           });
         }
         view.loadURL(
-          path.join(app.getPath('appData'), 'sheditor', 'view.html')
+          url.format({
+            pathname: path.join(
+              app.getPath('appData'),
+              'sheditor',
+              'view.html'
+            ),
+            protocol: 'file:',
+            slashes: true
+          })
         );
         view.show();
         view.focus();

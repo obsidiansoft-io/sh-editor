@@ -4,7 +4,6 @@ import {
   Select,
   Row,
   Col,
-  message,
   Modal,
   List,
   Typography
@@ -28,7 +27,6 @@ const { BrowserWindow } = remote;
 function Home(props) {
   const [page, setPage] = useState('');
   const [mode, setMode] = useState('json');
-  const [modalView, setViewM] = useState(false);
 
   function onChange(newValue) {
     setPage(newValue);
