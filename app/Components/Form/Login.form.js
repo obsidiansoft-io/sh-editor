@@ -22,7 +22,7 @@ const LoginForm = props => {
             console.log(res);
             props.logInAction(res);
             setLoading(false);
-            props.push('/home');
+            props.push('/dashboard');
           });
         } catch (error) {
           setLoading(false);
