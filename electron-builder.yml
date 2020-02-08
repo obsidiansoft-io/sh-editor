@@ -1,0 +1,5 @@
+appId: com.sharabiz.Sheditor
+publish:
+  provider: github
+  token: [YOUR GITHUB ACCESS TOKEN]
+git
