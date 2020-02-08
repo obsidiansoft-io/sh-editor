@@ -68,12 +68,17 @@ function Home(props) {
             onSelect={e => setMode(e)}
           >
             <Select.Option value="json">JSON</Select.Option>
-            <Select.Option value="html">HTML</Select.Option>
+            <Select.Option value="html" disabled>
+              HTML
+            </Select.Option>
           </Select>
         </Col>
         <Col>
+          <Button style={{ marginRight: 10 }} disabled>
+            Save
+          </Button>
           <Button onClick={() => valueJSON()} type="primary">
-            Run
+            Preview
           </Button>
         </Col>
       </Row>

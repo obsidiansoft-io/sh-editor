@@ -3,7 +3,10 @@
   "DASHBOARD": {
     "HOME": "/dashboard",
     "BIZCARDS": "/dashboard/biscards",
-    "TEMPLATES": "/dashboard/templates",
+    "TEMPLATES": {
+      "HOME": "/dashboard/templates",
+      "EDITOR": "/dashboard/templates/editor"
+    },
     "PROFILE": "/dashboard/profile",
     "SETTINGS": "/dashboard/settings"
   }

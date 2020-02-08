@@ -19,8 +19,18 @@ const SubRoutes = props => {
   return (
     <Switch>
       <Route path={routes.DASHBOARD.HOME} component={Home} exact />
-      <Route path={routes.DASHBOARD.TEMPLATES} component={Editor} exact />
       <Route path={routes.DASHBOARD.BIZCARDS} component={Bizcards} exact />
+      //Templates
+      <Route
+        path={routes.DASHBOARD.TEMPLATES.HOME}
+        component={Templates}
+        exact
+      />
+      <Route
+        path={routes.DASHBOARD.TEMPLATES.EDITOR}
+        component={Editor}
+        exact
+      />
     </Switch>
   );
 };
@@ -50,7 +60,7 @@ const Dashboard = props => {
           </Menu.Item>
           <Menu.Item
             key="templates"
-            onClick={e => props.push(routes.DASHBOARD.TEMPLATES)}
+            onClick={e => props.push(routes.DASHBOARD.TEMPLATES.HOME)}
           >
             Templates
           </Menu.Item>
