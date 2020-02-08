@@ -1,5 +1,10 @@
 {
-  "HOME": "/home",
   "LOGIN": "/",
-  "DASHBOARD": "/dashboard"
+  "DASHBOARD": {
+    "HOME": "/dashboard",
+    "BIZCARDS": "/dashboard/biscards",
+    "TEMPLATES": "/dashboard/templates",
+    "PROFILE": "/dashboard/profile",
+    "SETTINGS": "/dashboard/settings"
+  }
 }

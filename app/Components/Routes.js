@@ -3,16 +3,15 @@ import { Switch, Route } from 'react-router';
 import routes from '../Settings/routes.json';
 import App from './App';
 //Routes
-import HomePage from '../Screens/Home';
 import Login from '../Screens/Login';
 import Dashboard from '../Screens/Dashboard';
 
 export default () => (
   <App>
     <Switch>
-      <Route path={routes.HOME} component={HomePage} />
-      <Route path={routes.LOGIN} component={Login} exact/>
-      <Route path={routes.DASHBOARD} component={Dashboard} />
+      <Route path={routes.LOGIN} component={Login} exact />
+      {/** DASHBOARD **/}
+      <Route path={routes.DASHBOARD.HOME} component={Dashboard} />
     </Switch>
   </App>
 );

@@ -1,21 +1,13 @@
 import React, { useState } from 'react';
-import {
-  Button,
-  Select,
-  Row,
-  Col,
-  Modal,
-  List,
-  Typography
-} from 'antd';
+import { Button, Select, Row, Col, Modal, List, Typography } from 'antd';
 import AceEditor from 'react-ace';
 import path from 'path';
 import fs from 'fs';
 import { remote } from 'electron';
 
-import parser from '../../Utils/parser';
-import { validateTemplate } from '../../Utils/validator';
-import createViewFrame from '../../Utils/renderView';
+import parser from '../../../../Utils/parser';
+import { validateTemplate } from '../../../../Utils/validator';
+import createViewFrame from '../../../../Utils/renderView';
 
 //Temas del editor
 import 'ace-builds/src-noconflict/mode-json';
@@ -63,7 +55,10 @@ function Home(props) {
     }
   }
   return (
-    <div className="home" style={{ width: '100%', height: '100vh' }}>
+    <div
+      className="home"
+      style={{ width: '100%', height: '100vh', background: '#001529' }}
+    >
       <Row type="flex" justify="space-between" style={{ margin: 20 }}>
         <Col>
           <span>Mode:</span>
