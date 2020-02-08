@@ -7,6 +7,7 @@ import Templates from './Layout/Templates';
 import Home from './Layout/Home';
 import Bizcards from './Layout/Bizcards';
 import Editor from './Layout/Editor';
+import Settings from './Layout/Settings';
 
 //Redux
 import { connect } from 'react-redux';
@@ -20,6 +21,7 @@ const SubRoutes = props => {
     <Switch>
       <Route path={routes.DASHBOARD.HOME} component={Home} exact />
       <Route path={routes.DASHBOARD.BIZCARDS} component={Bizcards} exact />
+      <Route path={routes.DASHBOARD.SETTINGS} component={Settings} exact />
       //Templates
       <Route
         path={routes.DASHBOARD.TEMPLATES.HOME}
@@ -64,7 +66,16 @@ const Dashboard = props => {
           >
             Templates
           </Menu.Item>
+          <Menu.Item
+            key="settings"
+            onClick={e => props.push(routes.DASHBOARD.SETTINGS)}
+          >
+            Settings
+          </Menu.Item>
         </Menu>
+        <div>
+          <Icon type="poweroff" />
+        </div>
       </Header>
       <Layout>
         <SubRoutes />

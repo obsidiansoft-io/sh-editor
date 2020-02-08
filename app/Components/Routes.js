@@ -5,13 +5,24 @@ import App from './App';
 //Routes
 import Login from '../Screens/Login';
 import Dashboard from '../Screens/Dashboard';
+import ProtectedRoute from './ProtectedRoute';
 
-export default () => (
-  <App>
-    <Switch>
-      <Route path={routes.LOGIN} component={Login} exact />
-      {/** DASHBOARD **/}
-      <Route path={routes.DASHBOARD.HOME} component={Dashboard} />
-    </Switch>
-  </App>
-);
+import { connect } from 'react-redux';
+
+const Routes = props => {
+  return (
+    <App>
+      <Switch>
+        <Route path={routes.LOGIN} component={Login} exact />
+        {/** DASHBOARD **/}
+        <ProtectedRoute
+          path={routes.DASHBOARD.HOME}
+          component={Dashboard}
+          token={props.token}
+        />
+      </Switch>
+    </App>
+  );
+};
+
+export default connect(state => ({ token: state.auth.token }), {})(Routes);
