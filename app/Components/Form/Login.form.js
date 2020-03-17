@@ -55,6 +55,9 @@ const LoginForm = props => {
           Log in
         </Button>
       </Form.Item>
+      <div className="create-account">
+        <span>Create account</span>
+      </div>
     </Form>
   );
 };
