@@ -102,7 +102,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
+    "url": "git+https://github.com/obsidiansoft-io/sh-editor"
   },
   "author": {
     "name": "Electron React Boilerplate Maintainers",
@@ -111,19 +111,14 @@
   },
   "contributors": [
     {
-      "name": "Vikram Rangaraj",
-      "email": "vikr01@icloud.com",
-      "url": "https://github.com/vikr01"
-    },
-    {
-      "name": "Amila Welihinda",
-      "email": "amilajack@gmail.com",
-      "url": "https://github.com/amilajack"
+      "name": "Alfredo Medrano",
+      "email": "alfredomedranosanchez@gmail.com",
+      "url": "https://github.com/QuinsZouls"
     }
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues"
+    "url": "https://github.com/obsidiansoft-io/sh-editor/issues"
   },
   "keywords": [
     "electron",
@@ -136,7 +131,7 @@
     "hot",
     "reload"
   ],
-  "homepage": "https://github.com/electron-react-boilerplate/electron-react-boilerplate#readme",
+  "homepage": "https://github.com/obsidiansoft-io/sh-editor#readme",
   "jest": {
     "testURL": "http://localhost/",
     "moduleNameMapper": {
