@@ -1,4 +1,4 @@
-import { stringify } from 'himalaya';
+import { stringify, parse } from 'himalaya';
 import validateTemplate from './validator';
 /**
  *Convierte las propiedades css de la base de datos.
@@ -12,10 +12,14 @@ export function parseCSS(css) {
         if (css[i] === css[i].toLocaleUpperCase()) {
           css = css.replace(css[i], `-${css[i].toLocaleLowerCase()}`);
         }
-      } catch (styleError) {}
+      } catch (styleError) {
+        console.log(styleError);
+      }
     }
     return css;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
   return '';
 }
 /**
@@ -50,7 +54,7 @@ export function recursiveMap(prop) {
         isCarousel = true;
       }
       if (prop['element_type'] === 'stats') {
-        //crea una función onClick para LitElement
+        //Crea una función onClick para LitElement
         prop['@click'] = `${`${'${'}() => sendAction({action:'${
           prop['data']['action']
         }', source: '${prop['data']['source']}'})`}${'}'}`;
@@ -76,8 +80,8 @@ export function recursiveMap(prop) {
           case 'type':
             break;
           case 'style':
-            //iteramos los estilos y los parseamos
-            Object.keys(prop[key]).map((key2, index) => {
+            //Iteramos los estilos y los parseamos
+            Object.keys(prop[key]).map((key2, i) => {
               if (key2 !== 'element_base') {
                 value += parseCSS(key2) + `: ${prop[key][key2]};`;
               }
@@ -160,8 +164,8 @@ export function jsonConvert(prop) {
           case 'type':
             break;
           case 'style':
-            //iteramos los estilos y los parseamos
-            Object.keys(prop[key]).map((key2, index) => {
+            //Iteramos los estilos y los parseamos
+            Object.keys(prop[key]).map((key2, i) => {
               if (key2 !== 'element_base') {
                 value += parseCSS(key2) + `: ${prop[key][key2]};`;
               }
@@ -204,6 +208,56 @@ export function jsonConvert(prop) {
   }
   return obj;
 }
+function recursiveMapHtml(obj, beforeObj) {
+  let shObj = {};
+  for (let key of Object.keys(obj)) {
+    switch (key) {
+      case 'tagName':
+        shObj.tagName = obj[key];
+        break;
+      case 'attributes':
+        for (let attr of obj[key]) {
+          shObj[attr.key] = attr.value;
+        }
+        break;
+      case 'type':
+        if (obj[key] === 'text') {
+          beforeObj.innerText = obj.content;
+        }
+        break;
+      case 'children':
+        shObj.children = obj.children.map(e => recursiveMapHtml(e, obj));
+        break;
+    }
+  }
+  return shObj;
+}
+export function htmlConvert(html) {
+  let objParsed = parse(html);
+  let shObj = {};
+  for (let key of Object.keys(objParsed[0])) {
+    switch (key) {
+      case 'tagName':
+        shObj.tagName = objParsed[0][key];
+        break;
+      case 'attributes':
+        for (let attr of objParsed[0][key]) {
+          shObj[attr.key] = attr.value;
+        }
+        break;
+      case 'type':
+        if (objParsed[0][key] === 'text') {
+          shObj.innerText = objParsed[0].content;
+        }
+        break;
+      case 'children':
+        shObj.children = objParsed[0][key].map(e => recursiveMapHtml(e, objParsed[0])).filter(e => e !== null && typeof e !== 'undefined');
+        break;
+    }
+  }
+  return shObj;
+}
+
 export default function parser(content = {}) {
   console.log(content);
   validateTemplate(content);

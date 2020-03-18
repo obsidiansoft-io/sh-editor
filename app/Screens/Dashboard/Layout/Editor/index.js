@@ -5,7 +5,7 @@ import path from 'path';
 import fs from 'fs';
 import { remote } from 'electron';
 
-import parser from '../../../../Utils/parser';
+import parser, { htmlConvert } from '../../../../Utils/parser';
 import { validateTemplate } from '../../../../Utils/validator';
 import createViewFrame from '../../../../Utils/renderView';
 
@@ -54,6 +54,9 @@ function Home(props) {
       });
     }
   }
+  function valueHTML() {
+    console.log(htmlConvert(page));
+  }
   return (
     <div
       className="home"
@@ -68,7 +71,7 @@ function Home(props) {
             onSelect={e => setMode(e)}
           >
             <Select.Option value="json">JSON</Select.Option>
-            <Select.Option value="html" disabled>
+            <Select.Option value="html">
               HTML
             </Select.Option>
           </Select>
@@ -77,7 +80,7 @@ function Home(props) {
           <Button style={{ marginRight: 10 }} disabled>
             Save
           </Button>
-          <Button onClick={() => valueJSON()} type="primary">
+          <Button onClick={() => mode === 'json' ? valueJSON() : valueHTML()} type="primary">
             Preview
           </Button>
         </Col>
