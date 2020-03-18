@@ -1,5 +1,31 @@
 import { stringify, parse } from 'himalaya';
 import validateTemplate from './validator';
+
+function removeEmptyNodes(nodes) {
+  return nodes.filter(node => {
+    if (node.type === 'element') {
+      node.children = removeEmptyNodes(node.children);
+      return true;
+    }
+    return node.content.length;
+  });
+}
+
+function stripWhitespace(nodes) {
+  return nodes.map(node => {
+    if (node.type === 'element') {
+      node.children = stripWhitespace(node.children);
+    } else {
+      node.content = node.content.trim();
+    }
+    return node;
+  });
+}
+
+function removeWhitespace(nodes) {
+  return removeEmptyNodes(stripWhitespace(nodes));
+}
+
 /**
  *Convierte las propiedades css de la base de datos.
  * @param {String} css propiedad de css para javascript
@@ -208,8 +234,11 @@ export function jsonConvert(prop) {
   }
   return obj;
 }
-function recursiveMapHtml(obj, beforeObj) {
+function recursiveMapHtml(obj, beforeChange) {
   let shObj = {};
+  function setText(txt) {
+    shObj.innerText = txt.replace('\\n', '');
+  }
   for (let key of Object.keys(obj)) {
     switch (key) {
       case 'tagName':
@@ -222,19 +251,29 @@ function recursiveMapHtml(obj, beforeObj) {
         break;
       case 'type':
         if (obj[key] === 'text') {
-          beforeObj.innerText = obj.content;
+          beforeChange(obj.content);
         }
         break;
       case 'children':
-        shObj.children = obj.children.map(e => recursiveMapHtml(e, obj));
+        shObj.children = obj.children
+          .map(e => recursiveMapHtml(e, setText))
+          .filter(
+            e =>
+              e !== null &&
+              typeof e !== 'undefined' &&
+              Object.keys(e).length > 0
+          );
         break;
     }
   }
   return shObj;
 }
 export function htmlConvert(html) {
-  let objParsed = parse(html);
+  let objParsed = removeWhitespace(parse(html));
   let shObj = {};
+  function setText(txt) {
+    shObj.innerText = txt.replace('\n', '');
+  }
   for (let key of Object.keys(objParsed[0])) {
     switch (key) {
       case 'tagName':
@@ -251,7 +290,14 @@ export function htmlConvert(html) {
         }
         break;
       case 'children':
-        shObj.children = objParsed[0][key].map(e => recursiveMapHtml(e, objParsed[0])).filter(e => e !== null && typeof e !== 'undefined');
+        shObj.children = objParsed[0][key]
+          .map(e => recursiveMapHtml(e, setText))
+          .filter(
+            e =>
+              e !== null &&
+              typeof e !== 'undefined' &&
+              Object.keys(e).length > 0
+          );
         break;
     }
   }
