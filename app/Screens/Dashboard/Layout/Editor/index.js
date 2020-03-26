@@ -56,6 +56,7 @@ function Home(props) {
   }
   function valueHTML() {
     console.log(htmlConvert(page));
+    createViewFrame(mode, page);
   }
   return (
     <div

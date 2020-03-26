@@ -65,4 +65,38 @@ export default async function createViewFrame(mode, page) {
       }
     );
   }
+  if (mode === 'html') {
+    if (!fs.existsSync(path.join(app.getPath('appData'), 'sheditor'))) {
+      fs.mkdirSync(path.join(app.getPath('appData'), 'sheditor'));
+    }
+    fs.writeFile(
+      path.join(app.getPath('appData'), 'sheditor', 'view.html'),
+      page,
+      () => {
+        if (!view) {
+          view = new BrowserWindow({
+            show: false,
+            width: 1024,
+            height: 728,
+            webPreferences: {
+              nodeIntegration: true
+            }
+          });
+        }
+        view.loadURL(
+          url.format({
+            pathname: path.join(
+              app.getPath('appData'),
+              'sheditor',
+              'view.html'
+            ),
+            protocol: 'file:',
+            slashes: true
+          })
+        );
+        view.show();
+        view.focus();
+      }
+    );
+  }
 }
